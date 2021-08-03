@@ -136,8 +136,8 @@ module.exports.getCalendarEvents = async(event) => {
   oAUTH2CLIENT.setCredentials({ access_token });
 
   return new Promise((resolve, reject) => {
-    calendar.event.list({
-      calendarId : CALENDAR_ID,
+    calendar.events.list({
+      calendarId: CALENDAR_ID,
       auth: oAUTH2CLIENT,
       timeMin: new Date().toISOString(),
       singleEvents: true,
@@ -149,7 +149,7 @@ module.exports.getCalendarEvents = async(event) => {
       return resolve(response);
     });
   })
-  .then((response) => {
+  .then((results) => {
     // respond with OAuth token
     return {
       statusCode: 200,
@@ -161,7 +161,7 @@ module.exports.getCalendarEvents = async(event) => {
   })
   .catch((err) => {
     //handle error
-    console.error(err);
+    //console.error(err);
     return {
       statusCode : 500,
       headers: {
