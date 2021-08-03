@@ -132,7 +132,7 @@ module.exports.getCalendarEvents = async(event) => {
 
   const oAUTH2CLIENT = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URIS[0]);
 
-  const access_token = decodeURIComponent(`${event.pathParameters.accessToken}`);
+  const access_token = decodeURIComponent(`${event.pathParameters.access_token}`);
   oAUTH2CLIENT.setCredentials({ access_token });
 
   return new Promise((resolve, reject) => {
