@@ -19,7 +19,7 @@ module.exports.hello = async (event) => {
 
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
-const calender = google.calendar("v3");
+const calendar = google.calendar("v3");
 
 /*
 * SCOPES allows you to set access levels; this is set to readonly for now because you don't have access right to update the calendar itself
@@ -137,8 +137,8 @@ module.exports.getCalendarEvents = async(event) => {
 
   return new Promise((resolve, reject) => {
     calendar.event.list({
-      CALENDAR_ID : CALENDAR_ID,
-      AUTH: oAUTH2CLIENT,
+      calendarId : CALENDAR_ID,
+      auth: oAUTH2CLIENT,
       timeMin: new Date().toISOString(),
       singleEvents: true,
       orderBy: "startTime",
