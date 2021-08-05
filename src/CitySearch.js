@@ -1,5 +1,4 @@
 // src/CitySearch.js
-
 import React, { Component } from 'react';
 
 class CitySearch extends Component {

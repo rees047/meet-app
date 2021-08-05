@@ -6,7 +6,6 @@
  * The Set will remove all duplicates from the array
  */
 
-import { exportDefaultSpecifier } from '@babel/types';
 import Axios from 'axios';
 import NProgress from 'nprogress';
 import { mockData } from './mock-data';
@@ -39,7 +38,7 @@ export const getEvents = async() => {
 
   if(token){
     removeQuery();
-    const url = 'https://cioqtx9w9d.execute-api.us-east-1.amazonaws.com/dev/api/get-events' + '/' + token;
+    const url = `https://cioqtx9w9d.execute-api.us-east-1.amazonaws.com/dev/api/get-events/${token}`;
     const result = await Axios.get(url);
 
     if(result.data){
@@ -65,7 +64,7 @@ const checkToken = async(accessToken) => {
 const getToken = async(code) => {
   const encodeCode = encodeURIComponent(code);
   const { access_token } = await fetch(
-    'https://cioqtx9w9d.execute-api.us-east-1.amazonaws.com/dev/api/token' + '/' + encodeCode
+    `https://cioqtx9w9d.execute-api.us-east-1.amazonaws.com/dev/api/token/${encodeCode}`
   )
   .then((res) => {
     return res.json();
@@ -92,7 +91,7 @@ export const getAccessToken = async() => {
       const { authURL } = results.data;
       return (window.location.href = authURL);
     }
-    return codde && getToken(code);
+    return code && getToken(code);
   }
   return accessToken;
 }

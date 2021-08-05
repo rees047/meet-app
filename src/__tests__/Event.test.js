@@ -23,11 +23,15 @@ describe('<Event /> component', () => {
         expect(EventWrapper.find(".event-dateTime")).toHaveLength(1);
     });
 
-    test("render event-timeZone", () => {
-        expect(EventWrapper.find(".event-timeZone")).toHaveLength(1);
-    });
-
     test('render event-details', () => {
+        expect(EventWrapper.find('.event-details')).toHaveLength(1);
+    });    
+
+    test('render event-link', () => {
+        expect(EventWrapper.find('.event-details')).toHaveLength(1);
+    });    
+
+    test('render event-description', () => {
         expect(EventWrapper.find('.event-details')).toHaveLength(1);
     });    
 

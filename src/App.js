@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberofEvents from './NumberofEvents';
 import { extractLocations, getEvents } from './api';
 
+import './App.css';
 import './nprogress.css';
 
 class App extends Component {
@@ -32,7 +32,9 @@ class App extends Component {
 
   updateEvents = (location) => {
     getEvents().then((events) => {
-      const locationEvents = (location === 'all') ? events : events.filter((event) => event.location === location);
+      const locationEvents = (location === 'all') ? 
+            events :
+            events.filter((event) => event.location === location);
       this.setState({
         events: locationEvents
       })
@@ -43,8 +45,8 @@ class App extends Component {
     return (
       <div className="App">
         <CitySearch locations={ this.state.locations } updateEvents={ this.updateEvents } />
-        <EventList events={ this.state.events } />
         <NumberofEvents />
+        <EventList events={ this.state.events } />
       </div>
     )
   }
