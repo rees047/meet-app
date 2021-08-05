@@ -22,7 +22,7 @@ class Event extends Component {
           <div className="event-location"></div>
           <div className="event-dateTime"></div>
         </div>
-        <button className="toggle-details"></button>
+        <button className="toggle-details" onClick={ this.toggleDetails() }></button>
         { showHide = (this.state.toggle) ? "show" : "hide" }
           <div className="event-details {`showHide`}"></div>
       </div>
