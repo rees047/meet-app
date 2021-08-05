@@ -7,24 +7,24 @@ class Event extends Component {
   }
 
   toggleDetails(){
-    this.setState(prevState => ({
+    /*this.setState(prevState => ({
       toggle: !prevState.toggle
-    }));
+    }));*/
   }
 
   render() {
     const { event } = this.props;
-    let showHide;
+    let showHide = (this.state.toggle) ? "show" : "hide";
     return (
-      <div id = { event.id} className="event" >
+      <div id = { event.id } className="event" >
         <div className="event-preview">
-          <div className="event-summary"></div>
-          <div className="event-location"></div>
-          <div className="event-dateTime"></div>
+          <h4 className="event-summary">{event.summary}</h4>
+          <div className="event-dateTime">dateTime</div>
+          <div className="event-timeZone">TmeZone</div>
+          <div className="event-location">@{event.summary} | {event.location}</div>
         </div>
-        <button className="toggle-details" onClick={ this.toggleDetails() }></button>
-        { showHide = (this.state.toggle) ? "show" : "hide" }
-          <div className="event-details {`showHide`}"></div>
+        <button className="toggle-details" onClick={ this.toggleDetails() }>More Details</button>
+          <div className="event-details showHide"></div>
       </div>
     )
   }
