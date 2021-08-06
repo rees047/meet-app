@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberofEvents from './NumberofEvents';
+import Header from './Header';
 import { extractLocations, getEvents } from './api';
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import './App.css';
 import './nprogress.css';
@@ -51,11 +57,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <CitySearch locations={ this.state.locations } updateEvents={ this.updateEvents } />
-        <NumberofEvents eventCount={this.state.numberofEvents} updateTotalEvents={ this.updateTotalEvents }/>
-        <EventList events={ this.state.events } />
-      </div>
+      <Container className="App">
+        <Row className="app-inner-wrapper">
+          <Col>
+            <Header></Header>
+            <CitySearch locations={ this.state.locations } updateEvents={ this.updateEvents } />
+            <NumberofEvents eventCount={this.state.numberofEvents} updateTotalEvents={ this.updateTotalEvents }/>
+            <EventList events={ this.state.events } />
+          </Col>
+        </Row>
+      </Container>
     )
   }
 

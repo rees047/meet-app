@@ -1,0 +1,16 @@
+.bg-image{
+    background-image: url('images/ruslan-bardash-Jqk3VXErDF0-unsplash.jpg');
+    background-size: contain;
+    height: 300px;
+    border-radius: 2em;
+}
+
+.mask{
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 2em;
+}
+
+.header-content{
+    height: 270px;
+    color: #ffffff;
+}

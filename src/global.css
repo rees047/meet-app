@@ -1,0 +1,24 @@
+.bg-grey{
+    background-color: #e3e5e4;
+}
+
+.light-grey{
+    background-color: #f8f9fa;
+}
+
+.light-orange{
+    background-color: #ffcf8e;
+    color: #fbe7b4;
+}
+
+.dark-orange{
+    background-color: #c5771d;
+}
+
+.light-blue{
+    
+}
+
+.rounded-corner{
+    border-radius: 2em;
+}

@@ -6,3 +6,9 @@
 .hide{
   display: none;
 }
+
+.event{
+  background-color: #f1f5f4;
+  border-radius: 1em;
+  border: 1px solid #f1f5f4;
+}

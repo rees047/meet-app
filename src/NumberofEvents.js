@@ -2,6 +2,10 @@
 
 import React, { Component } from 'react';
 
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+
 class NumberofEvents extends Component {
 
     state = {
@@ -32,11 +36,27 @@ class NumberofEvents extends Component {
         numberofEvents = (!numberofEvents) ? 32 : numberofEvents;
         
         return (
-            <div className="NumberofEvents">
-                <label>Number of Events: </label><br/>
-                <p>{ (invalid) ? 'Value entered is Invalid. Displaying last valid value' : <br/>}</p>
-                <input type="text" className="numberofEventsInput" value={numberofEvents} onChange={this.handleInputChanged} />
-            </div>
+            <Row className="NumberofEvents">
+                <Col md={{span: 6, offset: 3}} lg={{span: 4, offset: 4}}>
+                    <br/>
+                    <Form>
+                        <Form.Label>Number of Events: </Form.Label>
+                        <Form.Control
+                            type="text"
+                            className="numberofEventsInput"
+                            value={numberofEvents}
+                            onChange={this.handleInputChanged}
+                        />
+                        <Form.Text className="text-muted">
+                           Please enter a value from 1-32.
+                        </Form.Text>
+                    </Form>
+                    <p>
+                        <small>{ (invalid) ? 'Input is Invalid' : '' }</small><br/>
+                        <small>{ (invalid) ? 'Currently displaying last valid value' : '' }</small><br/>
+                    </p>
+                </Col>
+            </Row>
         )
     }
 

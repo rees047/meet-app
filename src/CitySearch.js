@@ -1,6 +1,12 @@
 // src/CitySearch.js
 import React, { Component } from 'react';
 
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+
+import './global.css';
+
 class CitySearch extends Component {
 
     state = {
@@ -32,15 +38,20 @@ class CitySearch extends Component {
     
     render() {
         return (
-            <div className="CitySearch">
-                <input
-                    type="text"
-                    className="city"
-                    value={ this.state.query }
-                    onChange={ this.handleInputChanged }
-                    onFocus={() => { this.setState({ showSuggestions: true }) }}
-                />
-                <ul
+            <Row className="CitySearch">
+                <Col>
+                    <br/>
+                    <Form>
+                        <Form.Control
+                            type="text"
+                            className="city"
+                            value={ this.state.query }
+                            onChange={ this.handleInputChanged }
+                            onFocus={() => { this.setState({ showSuggestions: true }) }}
+
+                        />
+                    </Form>
+                    <ul
                     className="suggestions"
                     style={ this.state.showSuggestions ? {} : { display: 'none' }}
                 >
@@ -51,7 +62,9 @@ class CitySearch extends Component {
                         <b>See all cities</b>
                     </li>
                 </ul>
-            </div>
+                </Col>
+                
+            </Row>
         )
     }
 
