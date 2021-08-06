@@ -28,11 +28,11 @@ describe('<Event /> component', () => {
     });    
 
     test('render event-link', () => {
-        expect(EventWrapper.find('.event-details')).toHaveLength(1);
+        expect(EventWrapper.find('.event-link')).toHaveLength(1);
     });    
 
     test('render event-description', () => {
-        expect(EventWrapper.find('.event-details')).toHaveLength(1);
+        expect(EventWrapper.find('.event-description')).toHaveLength(1);
     });    
 
     test('render toggle-details button', () => {

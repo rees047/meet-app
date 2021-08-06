@@ -31,3 +31,4 @@ jspm_packages
 
 # environment variables
 config.json
+src/mock-data-src.js

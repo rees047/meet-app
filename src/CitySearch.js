@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class CitySearch extends Component {
 
     state = {
-        query : '', //or Munich or whatever, it should still pass
+        query : 'all', //or Munich or whatever, it should still pass
         suggestions : [],
         showSuggestions: undefined
     }

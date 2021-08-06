@@ -1,5 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import { waitFor } from "@testing-library/react";
+
 import App from '../App';
 import EventList from '../EventList';
 import CitySearch from '../CitySearch';
@@ -58,7 +60,10 @@ describe('<App /> integration', () => {
         await CitySearchWrapper.instance().handleItemClicked(selectedCity);
         const allEvents = await getEvents();
         const eventsToShow = allEvents.filter(event => event.location === selectedCity);
-        expect(AppWrapper.state('events')).toEqual(eventsToShow);AppWrapper.unmount();
+        AppWrapper.setState({ numberofEvents : 4});
+        const AppWrapperstateEvents = AppWrapper.state('events').slice(0, AppWrapper.state('numberofEvents'));
+        expect(AppWrapperstateEvents.length).toEqual(eventsToShow.length);
+        AppWrapper.unmount();
     });
 
     test('get list of all events when user selects "See all cities"', async() => {
@@ -68,6 +73,40 @@ describe('<App /> integration', () => {
         const allEvents = await getEvents();
         expect(AppWrapper.state('events')).toEqual(allEvents);
         AppWrapper.unmount();
+    });
+
+    test('App passes "numberOfEvents" prop to NumberofEvents', () => {
+        const AppWrapper = mount(<App />);
+        const AppTotalEventsState = AppWrapper.state('numberofEvents');
+        expect(AppTotalEventsState).not.toEqual(undefined);
+        expect(AppWrapper.find(NumberofEvents).props().eventCount).toEqual(AppTotalEventsState);
+        AppWrapper.unmount();
+    });
+
+    test('change state when text input changes', () => {
+        const AppWrapper = mount(<App />);
+        AppWrapper.setState({
+            numberofEvents: '4'
+        });
+        const eventObject = { target: {value: '8'}}; 
+        const NumberofEventsWrapper = AppWrapper.find(NumberofEvents);
+        NumberofEventsWrapper.find('.numberofEventsInput').simulate('change', eventObject);
+        expect(AppWrapper.state('numberofEvents')).toBe('8');        
+    });
+
+    test("display number of events based on user input", async () => {
+        const AppWrapper = mount(<App />);    
+        AppWrapper.setState({
+            numberOfEvents: '4',
+            locations: 'Berlin'
+        });
+        const eventObject = { target: {value: '8'}};     
+        const NumberofEventsWrapper = AppWrapper.find(NumberofEvents);
+        NumberofEventsWrapper.find('.numberofEventsInput').simulate('change', eventObject);
+        await waitFor(() => {
+            AppWrapper.update();
+            expect(AppWrapper.state('events').length).toBe(8);
+        });
     });
 
 });

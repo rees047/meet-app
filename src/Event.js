@@ -7,10 +7,11 @@ class Event extends Component {
   constructor(){
     super();    
     this.state = {
-      toggle : 0
+      toggle : 0,
+      forTesting: false
     }
     this.toggleDetails = this.toggleDetails.bind(this);
-  } 
+  }
 
   toggleDetails(){
     this.setState(prevState => ({
@@ -29,10 +30,9 @@ class Event extends Component {
     let exactTimeZone = longDate.split("T");
     let exactTime = (exactTimeZone[1].match(/.{1,8}/g));
 
-    
-    if (dt < 10) {
-        dt = '0' + dt;
-    }
+    /*if (dt < 10) {
+      dt = '0' + dt;
+    }*/
 
     /*if (month < 10) {
         month = '0' + month;
@@ -52,7 +52,8 @@ class Event extends Component {
       <div id = { event.id } className="event" >
         <div className="event-preview">
           <h4 className="event-summary">{event.summary}</h4>
-          <div className="event-dateTime">{this.refineDate(event.start.dateTime)} ({event.start.timeZone})</div>
+          <div className="event-dateTime">{this.refineDate("2020-05-20T15:00:00+02:00")}</div> 
+          { /* <div className="event-dateTime">{this.refineDate(event.start.dateTime)} ({event.start.timeZone})</div> */ }
           <div className="event-location">@{event.summary} | {event.location}</div>
         </div>
         <button className="toggle-details" onClick={this.toggleDetails}>{showHideText}</button>
