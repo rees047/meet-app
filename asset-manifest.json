@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/meet-app/static/css/main.2a80c69e.chunk.css",
+    "main.css": "/meet-app/static/css/main.4a9986f5.chunk.css",
     "main.js": "/meet-app/static/js/main.90faa995.chunk.js",
     "main.js.map": "/meet-app/static/js/main.90faa995.chunk.js.map",
     "runtime-main.js": "/meet-app/static/js/runtime-main.f65ad0f6.js",
@@ -12,14 +12,14 @@
     "index.html": "/meet-app/index.html",
     "service-worker.js": "/meet-app/service-worker.js",
     "service-worker.js.map": "/meet-app/service-worker.js.map",
-    "static/css/main.2a80c69e.chunk.css.map": "/meet-app/static/css/main.2a80c69e.chunk.css.map",
+    "static/css/main.4a9986f5.chunk.css.map": "/meet-app/static/css/main.4a9986f5.chunk.css.map",
     "static/js/2.ef7fdd37.chunk.js.LICENSE.txt": "/meet-app/static/js/2.ef7fdd37.chunk.js.LICENSE.txt",
-    "static/media/Header.css": "/meet-app/static/media/ruslan-bardash-Jqk3VXErDF0-unsplash.eda89edb.jpg"
+    "static/media/App.css": "/meet-app/static/media/ruslan-bardash-Jqk3VXErDF0-unsplash.eda89edb.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.f65ad0f6.js",
     "static/js/2.ef7fdd37.chunk.js",
-    "static/css/main.2a80c69e.chunk.css",
+    "static/css/main.4a9986f5.chunk.css",
     "static/js/main.90faa995.chunk.js"
   ]
 }
