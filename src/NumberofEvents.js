@@ -25,7 +25,6 @@ class NumberofEvents extends Component {
                 numberofEvents: value,
                 invalid: false
             });
-    
             this.props.updateTotalEvents(value);
         }
                 
@@ -33,8 +32,7 @@ class NumberofEvents extends Component {
     
     render() {
         let { numberofEvents, invalid } = this.state;
-        numberofEvents = (!numberofEvents) ? 32 : numberofEvents;
-        
+       
         return (
             <Row className="NumberofEvents">
                 <Col md={{span: 6, offset: 3}} lg={{span: 4, offset: 4}}>
@@ -51,9 +49,9 @@ class NumberofEvents extends Component {
                            Please enter a value from 1-32.
                         </Form.Text>
                     </Form>
-                    <p>
-                        <small>{ (invalid) ? 'Input is Invalid' : '' }</small><br/>
-                        <small>{ (invalid) ? 'Currently displaying last valid value' : '' }</small><br/>
+                    <p className="error-msg">
+                        <small>{ (invalid) ? 'Input is Invalid' : <br/> }</small>
+                        <small>{ (invalid) ? 'Currently displaying last valid value' : <br/> }</small><br/>
                     </p>
                 </Col>
             </Row>

@@ -34,4 +34,26 @@ describe('<NumberofEvents /> component', () => {
         expect(NumberofEventsWrapper.state('numberofEvents')).toBe('8');        
     }); 
 
+    test('test if text input is a number', () => {
+        NumberofEventsWrapper.setState({
+            numberofEvents: '4',
+            invalid: false
+        });
+        
+        const eventObject = { target: {value: 'abcd'}};        
+        NumberofEventsWrapper.find('.numberofEventsInput').simulate('change', eventObject);
+        expect(NumberofEventsWrapper.state('invalid')).toBe(true);        
+    });
+
+    test('test if text input is a from 1 - 32', () => {
+        NumberofEventsWrapper.setState({
+            numberofEvents: '4',
+            invalid: false
+        });
+        
+        const eventObject = { target: {value: '48'}};        
+        NumberofEventsWrapper.find('.numberofEventsInput').simulate('change', eventObject);
+        expect(NumberofEventsWrapper.state('invalid')).toBe(true);        
+    });
+
 });

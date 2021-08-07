@@ -42,26 +42,26 @@ input[type="number"] {
   height: 38px;
 }
 
-.city {
+/*.city {
   width: 250px;
-}
+}*/
 
 .CitySearch {
   display: flex;
   flex-direction: column;
-  flex-basis: 300px;
-  max-width: 300px;
+  flex-basis: 324px;
+  max-width: 324px;
   margin: auto;
   position: relative;
 }
 
 .suggestions {
-  width: 250px;
+  width: 290px;
   position: absolute;
   z-index: 2;
   align-self: center;
   margin: 0;
-  top: 43px;
+  /*top: 43px;*/
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
@@ -83,7 +83,8 @@ input[type="number"] {
 }
 
 .event {
-  padding: 10px 10px 35px;
+  /*padding: 10px 10px 35px;*/
+  padding: 10px 10px;
   margin-bottom: 10px;
   text-align: left;
   /*border: 1px solid #ccc;
@@ -204,12 +205,27 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
+/* my custom css*/
+
+body{
+  background-color: #f2b967;
+}
+
+.App{
+  background-color: #ffffff; /*#eab676;*/
+}
+
 .app-inner-wrapper{
-  background-color: #eab676;
   border-radius: 2em;
   padding: 2em 1em;
-  border: 0.5em #72573f double;
+  border: 0.5em #72573f solid; 
   color: #063970;
+}
+
+
+.NumberofEvents .error-msg small{
+  display: block;
+  color: #bf2423;
 }
 
 @media only screen and (min-width: 992px) {

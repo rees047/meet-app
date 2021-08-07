@@ -7,12 +7,12 @@ class Header extends Component {
   
     render() {
         return (
-            <div className="bg-image">
+            <div className="bg-image" title="attribution: unsplash.com - ruslan bardash">
                 <div className="mask">
-                    <div class="d-flex justify-content-center align-items-center header-content">
+                    <div className="d-flex justify-content-center align-items-center header-content">
                         <div>
-                            <h1 class="mb-3">MeetMyCity</h1>
-                            <h5 class="mb-4">Unleash the explorer in you experience the local urban adventures </h5>
+                            <h1 className="mb-3">MeetMyCity</h1>
+                            <h5 className="mb-4">Let the EXPLORER in you EXPERIENCE the LOCAL URBAN ADVENTURES </h5>
                         </div>
                     </div>
                 </div>

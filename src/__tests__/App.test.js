@@ -90,7 +90,7 @@ describe('<App /> integration', () => {
         });
         const eventObject = { target: {value: '8'}}; 
         const NumberofEventsWrapper = AppWrapper.find(NumberofEvents);
-        NumberofEventsWrapper.find('.numberofEventsInput').simulate('change', eventObject);
+        NumberofEventsWrapper.find('.numberofEventsInput').at(0).simulate('change', eventObject);
         expect(AppWrapper.state('numberofEvents')).toBe('8');        
     });
 
@@ -102,7 +102,7 @@ describe('<App /> integration', () => {
         });
         const eventObject = { target: {value: '8'}};     
         const NumberofEventsWrapper = AppWrapper.find(NumberofEvents);
-        NumberofEventsWrapper.find('.numberofEventsInput').simulate('change', eventObject);
+        NumberofEventsWrapper.find('.numberofEventsInput').at(0).simulate('change', eventObject);
         await waitFor(() => {
             AppWrapper.update();
             expect(AppWrapper.state('events').length).toBe(8);

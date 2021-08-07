@@ -5,12 +5,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 
-import './global.css';
-
 class CitySearch extends Component {
 
     state = {
-        query : 'all', //or Munich or whatever, it should still pass
+        query : 'All Cities', //or Munich or whatever, it should still pass
         suggestions : [],
         showSuggestions: undefined
     }
@@ -40,7 +38,7 @@ class CitySearch extends Component {
         return (
             <Row className="CitySearch">
                 <Col>
-                    <br/>
+                    <br/><br/>
                     <Form>
                         <Form.Control
                             type="text"
@@ -50,6 +48,9 @@ class CitySearch extends Component {
                             onFocus={() => { this.setState({ showSuggestions: true }) }}
 
                         />
+                        <Form.Text className="text-muted">
+                           Please choose from the suggestion list
+                        </Form.Text>
                     </Form>
                     <ul
                     className="suggestions"
@@ -58,7 +59,7 @@ class CitySearch extends Component {
                     { this.state.suggestions.map((suggestion) => (
                         <li key={suggestion} onClick={() => this.handleItemClicked(suggestion)}>{suggestion}</li>
                     ))}
-                    <li key="all" onClick={() =>this.handleItemClicked("all")}>
+                    <li key="All Cities" onClick={() =>this.handleItemClicked("All Cities")}>
                         <b>See all cities</b>
                     </li>
                 </ul>

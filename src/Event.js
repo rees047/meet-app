@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+
 import './Event.css';
 
 class Event extends Component {
@@ -30,9 +33,9 @@ class Event extends Component {
     let exactTimeZone = longDate.split("T");
     let exactTime = (exactTimeZone[1].match(/.{1,8}/g));
 
-    /*if (dt < 10) {
+    if (dt < 10) {
       dt = '0' + dt;
-    }*/
+    }
 
     /*if (month < 10) {
         month = '0' + month;
@@ -49,21 +52,19 @@ class Event extends Component {
     let showHideText = (this.state.toggle) ? "Hide Details" : "More Details";
 
     return (
-      <div id = { event.id } className="event" >
-        <div className="event-preview">
-          <h4 className="event-summary">{event.summary}</h4>
-          <div className="event-dateTime">{this.refineDate("2020-05-20T15:00:00+02:00")}</div> 
-          { /* <div className="event-dateTime">{this.refineDate(event.start.dateTime)} ({event.start.timeZone})</div> */ }
-          <div className="event-location">@{event.summary} | {event.location}</div>
-        </div>
-        <button className="toggle-details" onClick={this.toggleDetails}>{showHideText}</button>
-        <div className={ `event-details ${showHide}` }>
-          <div className="event-link">
-            <a href={event.htmlLink} target="blank" title={event.summary}>{event.summary}</a>
-          </div>
-          <div className="event-description">{event.description}</div>            
-        </div>
-      </div>
+      <Card id = { event.id } className="event">
+        <Card.Body className="event-preview">
+          <Card.Title className="event-summary">{event.summary}</Card.Title>
+          { /*<div className="event-dateTime">{this.refineDate("2020-05-20T15:00:00+02:00")}</div> */ }
+          <Card.Subtitle className="event-dateTime">{this.refineDate(event.start.dateTime)} ({event.start.timeZone})</Card.Subtitle> 
+          <Card.Text className="event-location">@{event.summary} | {event.location}</Card.Text>
+          <Button variant="info" className="toggle-details" onClick={this.toggleDetails}>{showHideText}</Button>
+          <Card.Text className={ `event-details ${showHide}` }>
+            <Card.Link href={event.htmlLink} target="blank" title={event.summary} className="event-link">{event.summary}</Card.Link>
+            <Card.Text className="event-description">{event.description}</Card.Text>            
+          </Card.Text>
+        </Card.Body>
+      </Card>
     )
   }
   
