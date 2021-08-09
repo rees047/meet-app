@@ -5,10 +5,11 @@ import { mockData } from '../mock-data';
 
 describe('<Event /> component', () => {
 
-    let EventWrapper;
+    let event, EventWrapper;
 
     beforeAll(() => {
-        EventWrapper = shallow(<Event event={mockData} />);
+        event = mockData[0];
+        EventWrapper = shallow(<Event event={event} />);
     });
 
     test('render event-summary', () => {
@@ -51,7 +52,7 @@ describe('<Event /> component', () => {
         });
 
         EventWrapper.find('.toggle-details').simulate('click');
-        //expect(EventWrapper.state('toggle')).toBe(!prevToggle);
+        expect(EventWrapper.state('toggle')).toBeFalsy();
     });
 
 });

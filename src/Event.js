@@ -55,7 +55,6 @@ class Event extends Component {
       <Card id = { event.id } className="event">
         <Card.Body className="event-preview">
           <Card.Title className="event-summary">{event.summary}</Card.Title>
-          { /*<div className="event-dateTime">{this.refineDate("2020-05-20T15:00:00+02:00")}</div> */ }
           <Card.Subtitle className="event-dateTime">{this.refineDate(event.start.dateTime)} ({event.start.timeZone})</Card.Subtitle> 
           <Card.Text className="event-location">@{event.summary} | {event.location}</Card.Text>
           <Button variant="info" className="toggle-details" onClick={this.toggleDetails}>{showHideText}</Button>
