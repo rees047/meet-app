@@ -5,24 +5,37 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 
+import { InfoAlert } from './Alert';
+
 class CitySearch extends Component {
 
     state = {
         query : 'All Cities', //or Munich or whatever, it should still pass
         suggestions : [],
-        showSuggestions: undefined
+        showSuggestions: undefined,
+        infoText: ''
     }
 
     handleInputChanged = (event) => {
         const value = event.target.value;
+        this.setState({ showSuggestions: true });
         const suggestions = this.props.locations.filter((location) => {
             return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
         });
         
-        this.setState({
-            query: value,
-            suggestions
-        });
+        if(suggestions.length === 0){
+            this.setState({
+                query: value,
+                infoText: 'We cannot find the city you are looking for. Please try another city'
+            });    
+        }else{
+            return this.setState({
+                query: value,
+                suggestions,
+                infoText: ''
+            });
+        }
+        
     }
 
     handleItemClicked = (suggestion) => {
@@ -33,11 +46,16 @@ class CitySearch extends Component {
         
         this.props.updateEvents(suggestion);
     }
+
+    handleClick = (e) => {
+        console.log(e);
+    }
     
     render() {
         return (
             <Row className="CitySearch">
                 <Col>
+                    <InfoAlert text={this.state.infoText} />
                     <br/><br/>
                     <Form>
                         <Form.Control
@@ -46,7 +64,6 @@ class CitySearch extends Component {
                             value={ this.state.query }
                             onChange={ this.handleInputChanged }
                             onFocus={() => { this.setState({ showSuggestions: true }) }}
-
                         />
                         <Form.Text className="text-muted">
                            Please choose from the suggestion list

@@ -224,10 +224,14 @@ body{
   color: #063970;
 }
 
+.my-alert{
+  height: 1.5rem;
+  margin-top: 2rem;
+}
 
 .NumberofEvents .error-msg small{
   display: block;
-  color: #bf2423;
+  color: #ff0000; /*bf2423*/
 }
 
 @media only screen and (min-width: 992px) {

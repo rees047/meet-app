@@ -6,11 +6,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 
+import { ErrorAlert } from './Alert';
+
 class NumberofEvents extends Component {
 
     state = {
         numberofEvents : 32, //or Munich or whatever, it should still pass
-        invalid : false
+        invalid : false,
+        errorText: ''
     }
 
     handleInputChanged = (event) => {
@@ -18,12 +21,14 @@ class NumberofEvents extends Component {
 
         if(isNaN(value) || value > 32){
             this.setState({
-                invalid : true
+                invalid : true,
+                errorText : 'Your current input is invalid.'
             });
         }else{
             this.setState({
                 numberofEvents: value,
-                invalid: false
+                invalid: false,
+                errorText : ''
             });
             this.props.updateTotalEvents(value);
         }
@@ -49,9 +54,9 @@ class NumberofEvents extends Component {
                            Please enter a value from 1-32.
                         </Form.Text>
                     </Form>
+                    <ErrorAlert text={this.state.errorText} />
                     <p className="error-msg">
-                        <small>{ (invalid) ? 'Input is Invalid' : <br/> }</small>
-                        <small>{ (invalid) ? 'Currently displaying last valid value' : <br/> }</small><br/>
+                        <small>{ (invalid) ? 'Currently displaying last VALID value.' : <br/> }</small><br/>
                     </p>
                 </Col>
             </Row>
