@@ -4,6 +4,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberofEvents from './NumberofEvents';
 import Header from './Header';
+import { WarningAlert } from './Alert';
 import { extractLocations, getEvents } from './api';
 
 import Container from 'react-bootstrap/Container';
@@ -19,11 +20,23 @@ class App extends Component {
     events: [],
     locations: [],
     numberofEvents: 32,
-    currentLocation: 'All Cities'
+    currentLocation: 'All Cities',
+    infoText: ''
   }
 
   componentDidMount(){
     this.mounted = true;
+    
+    if(!navigator.onLine){
+      this.setState({
+        infoText : 'Internet Connection Not Detected. Information shown may not be recent'
+      });
+    }else{
+      this.setState({
+        infoText : ''
+      });
+    }
+
     getEvents().then((events) => {
       if(this.mounted){
         this.setState({
@@ -58,11 +71,13 @@ class App extends Component {
   }
 
   render() {
+    
     return (
       <Container className="App">
         <Row className="app-inner-wrapper">
           <Col>
             <Header></Header>
+            <WarningAlert text={this.state.infoText} />
             <CitySearch locations={ this.state.locations } updateEvents={ this.updateEvents } />
             <NumberofEvents eventCount={this.state.numberofEvents} updateTotalEvents={ this.updateTotalEvents }/>
             <EventList events={ this.state.events } currentLocation={this.state.currentLocation} />
