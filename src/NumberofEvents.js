@@ -19,7 +19,7 @@ class NumberofEvents extends Component {
     handleInputChanged = (event) => {
         let value = event.target.value;
 
-        if(isNaN(value) || value > 32){
+        if(isNaN(value) || value > 32 || value <= 0 || value === ''){
             this.setState({
                 invalid : true,
                 errorText : 'Your current input is invalid.'
@@ -47,7 +47,7 @@ class NumberofEvents extends Component {
                         <Form.Control
                             type="text"
                             className="numberofEventsInput"
-                            value={numberofEvents}
+                            placeholder={numberofEvents}
                             onChange={this.handleInputChanged}
                         />
                         <Form.Text className="text-muted">
@@ -56,7 +56,7 @@ class NumberofEvents extends Component {
                     </Form>
                     <ErrorAlert text={this.state.errorText} />
                     <p className="error-msg">
-                        <small>{ (invalid) ? 'Currently displaying last VALID value.' : <br/> }</small><br/>
+                        <small>{ (invalid) ? `Last valid value is: ${numberofEvents}` : <br/> }</small><br/>
                     </p>
                 </Col>
             </Row>

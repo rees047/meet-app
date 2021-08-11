@@ -45,10 +45,7 @@ class CitySearch extends Component {
         })
         
         this.props.updateEvents(suggestion);
-    }
-
-    handleClick = (e) => {
-        console.log(e);
+        
     }
     
     render() {
@@ -56,7 +53,10 @@ class CitySearch extends Component {
             <Row className="CitySearch">
                 <Col>
                     <InfoAlert text={this.state.infoText} />
-                    <br/><br/>
+                    <br/>
+                    <Form.Text className="text-muted">
+                           Please start typing and choose the city from the suggestion list
+                    </Form.Text>
                     <Form>
                         <Form.Control
                             type="text"
@@ -65,9 +65,6 @@ class CitySearch extends Component {
                             onChange={ this.handleInputChanged }
                             onFocus={() => { this.setState({ showSuggestions: true }) }}
                         />
-                        <Form.Text className="text-muted">
-                           Please choose from the suggestion list
-                        </Form.Text>
                     </Form>
                     <ul
                     className="suggestions"
