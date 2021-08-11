@@ -30,6 +30,16 @@ class App extends Component {
   async componentDidMount(){
     this.mounted = true;
 
+    if(!navigator.onLine){
+      this.setState({
+        infoText : 'Internet Connection Not Detected. Information shown may not be recent'
+      });
+    }else{
+      this.setState({
+        infoText : ''
+      });
+    }
+
     const accessToken = localStorage.getItem('access_token');
     const isTokenValid = (await checkToken(accessToken)).error ? false : true;
     const searchParams = new URLSearchParams(window.location.search);
@@ -46,19 +56,9 @@ class App extends Component {
         }
       });
     }
-    
-    if(!navigator.onLine){
-      this.setState({
-        infoText : 'Internet Connection Not Detected. Information shown may not be recent'
-      });
-    }else{
-      this.setState({
-        infoText : ''
-      });
-    }
 
     //for localhost testing
-    if(this.mounted){
+    /*if(this.mounted){
       getEvents().then((events) => {
         if (this.mounted) {
           this.setState({
@@ -67,7 +67,7 @@ class App extends Component {
           });
         }
       });
-    }
+    }*/
 
   }
 
@@ -108,8 +108,8 @@ class App extends Component {
   render() {
     
     //comment this out for local testing
-    /*if (this.state.showWelcomeScreen)
-      return <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />*/
+    if (this.state.showWelcomeScreen)
+      return <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
     
     return (
       <Container className="App">
