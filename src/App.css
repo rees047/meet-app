@@ -226,7 +226,7 @@ body{
 
 .my-alert{
   height: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 
 .NumberofEvents .error-msg small{
