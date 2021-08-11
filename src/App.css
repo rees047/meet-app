@@ -172,7 +172,8 @@ input[type="number"] {
 body{
   background-color: #f2b967;
   background-image: url('images/ruslan-bardash-Jqk3VXErDF0-unsplash.jpg');
-  background-size: fixed;
+  background-attachment: fixed;
+  background-size: contain;
 }
 
 .App{

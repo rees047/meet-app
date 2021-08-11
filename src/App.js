@@ -58,7 +58,7 @@ class App extends Component {
     }
 
     //for localhost testing
-    if(this.mounted){
+    /*if(this.mounted){
       getEvents().then((events) => {
         if (this.mounted) {
           this.setState({
@@ -67,7 +67,7 @@ class App extends Component {
           });
         }
       });
-    }
+    }*/
 
   }
 
@@ -107,8 +107,8 @@ class App extends Component {
 
   render() {
     
-    /*if (this.state.showWelcomeScreen)
-      return <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />*/
+    if (this.state.showWelcomeScreen)
+      return <WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen} getAccessToken={() => { getAccessToken() }} />
     
     return (
       <Container className="App">
