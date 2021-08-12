@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/meet-app/static/css/main.34b1070a.chunk.css",
-    "main.js": "/meet-app/static/js/main.665565e8.chunk.js",
-    "main.js.map": "/meet-app/static/js/main.665565e8.chunk.js.map",
-    "runtime-main.js": "/meet-app/static/js/runtime-main.8c673e79.js",
-    "runtime-main.js.map": "/meet-app/static/js/runtime-main.8c673e79.js.map",
-    "static/js/2.706a6353.chunk.js": "/meet-app/static/js/2.706a6353.chunk.js",
-    "static/js/2.706a6353.chunk.js.map": "/meet-app/static/js/2.706a6353.chunk.js.map",
-    "static/js/3.68464392.chunk.js": "/meet-app/static/js/3.68464392.chunk.js",
-    "static/js/3.68464392.chunk.js.map": "/meet-app/static/js/3.68464392.chunk.js.map",
+    "main.css": "/meet-app/static/css/main.1a9e3066.chunk.css",
+    "main.js": "/meet-app/static/js/main.a4d1d69c.chunk.js",
+    "main.js.map": "/meet-app/static/js/main.a4d1d69c.chunk.js.map",
+    "runtime-main.js": "/meet-app/static/js/runtime-main.9a0062d5.js",
+    "runtime-main.js.map": "/meet-app/static/js/runtime-main.9a0062d5.js.map",
+    "static/js/2.321c7d98.chunk.js": "/meet-app/static/js/2.321c7d98.chunk.js",
+    "static/js/2.321c7d98.chunk.js.map": "/meet-app/static/js/2.321c7d98.chunk.js.map",
+    "static/js/3.38a2e3f4.chunk.js": "/meet-app/static/js/3.38a2e3f4.chunk.js",
+    "static/js/3.38a2e3f4.chunk.js.map": "/meet-app/static/js/3.38a2e3f4.chunk.js.map",
     "index.html": "/meet-app/index.html",
     "service-worker.js": "/meet-app/service-worker.js",
     "service-worker.js.map": "/meet-app/service-worker.js.map",
-    "static/css/main.34b1070a.chunk.css.map": "/meet-app/static/css/main.34b1070a.chunk.css.map",
-    "static/js/2.706a6353.chunk.js.LICENSE.txt": "/meet-app/static/js/2.706a6353.chunk.js.LICENSE.txt",
+    "static/css/main.1a9e3066.chunk.css.map": "/meet-app/static/css/main.1a9e3066.chunk.css.map",
+    "static/js/2.321c7d98.chunk.js.LICENSE.txt": "/meet-app/static/js/2.321c7d98.chunk.js.LICENSE.txt",
     "static/media/App.css": "/meet-app/static/media/ruslan-bardash-Jqk3VXErDF0-unsplash.e4bfbb19.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8c673e79.js",
-    "static/js/2.706a6353.chunk.js",
-    "static/css/main.34b1070a.chunk.css",
-    "static/js/main.665565e8.chunk.js"
+    "static/js/runtime-main.9a0062d5.js",
+    "static/js/2.321c7d98.chunk.js",
+    "static/css/main.1a9e3066.chunk.css",
+    "static/js/main.a4d1d69c.chunk.js"
   ]
 }
