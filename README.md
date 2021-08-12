@@ -1,5 +1,43 @@
 # meet-app
  meet-app created using Create React
+ 
+**OBJECTIVE**: The objective of this project is to build a serverless, progressive web application (PWA) with REact using a test-driven development (TDD) technique. This application uses the google Calendar API to fetch upcoming events.
+
+**DESCRIPTION**: This app takes data from the Google Calendar API to fetch cities and upcoming events corresponding to those cities.
+
+By default, all cities are listed and the default number of events is 32. Users can search for cities in the textbox and click on the suggestion list to be able to view the events.
+
+This app was tested using the TDD and BDD approach. The Gherkins file was also very helpful in making sure all requirements are met. Atatus was used to monitor web performance.
+
+Lastly, a line and pie chart was used respectively to show the power of create-react and data visualization.
+
+The web app should work in both desktop and mobile views.
+
+**TECHNOLOGIES**:
+"dependencies":
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/user-event": "^12.8.3",
+    "atatus-spa": "^4.3.2",
+    "axios": "^0.21.1",
+    "nprogress": "^0.2.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "recharts": "^2.1.0",
+    "web-vitals": "^0.2.4"
+
+"devDependencies":
+    "@testing-library/react": "^11.2.7",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
+    "enzyme": "^3.11.0",
+    "gh-pages": "^3.2.3",
+    "jest-cucumber": "^3.0.1",
+    "puppeteer": "^10.2.0"
+
+**GH PAGES LINK**:https://rees047.github.io/meet-app
+
+**NOTICE**: It asks for a user authorization content to be able to use the app. No other information is used, collected nor accessed in this app and the calendar that is used is taken from the Google API calendar and not the user's personal calendar.
 
 
 
